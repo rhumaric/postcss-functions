@@ -181,7 +181,7 @@ test(
     'a{background:bar; border: foo();} .foo(){}',
     {
         functions: {
-            foo: _ => 'bar'
+            foo: () => 'bar'
         },
         walk: function (css, cb) {
             css.walkDecls(/background/,cb);
