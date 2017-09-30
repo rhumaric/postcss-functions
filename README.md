@@ -111,3 +111,20 @@ require('postcss-functions')({
   withNode: ['willGetTheNode']
 });
 ```
+
+### `walk`
+
+Type: `function`
+
+By default, the plugin walks all the nodes of the AST. You can use the `walk` option to provide your own walking function.
+
+**Example:**
+
+```js
+require('postcss-functions')({
+  // Only walk declarations of matching /background/
+  walk: function (css, cb) {
+    css.walkDecls(/background/,cb);
+  }
+});
+```
